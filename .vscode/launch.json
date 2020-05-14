@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HolaMundoThymeleaf<thymeleaf>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.polordz.thymeleaf.HolaMundoThymeleaf",
+            "projectName": "thymeleaf",
+            "args": ""
+        }
+    ]
+}
