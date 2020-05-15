@@ -19,12 +19,12 @@
         <br>
         <table class="table" th:if="${personas != null and !personas.empty}">
             <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
+                <th scope="col">[[#{persona.nombre}]]</th>
+                <th scope="col">[[#{persona.apellido}]]</th>
+                <th scope="col">[[#{persona.email}]]</th>
+                <th scope="col">[[#{persona.telefono}]]</th>
+                <th scope="col">[[#{accion.editar}]]</th>
+                <th scope="col">[[#{accion.eliminar}]]</th>
             </tr>
             <tr th:each="persona : ${personas}">
                 <td id="nombre" th:text="${persona.nombre}"></td>

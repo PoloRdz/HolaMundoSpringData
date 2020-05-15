@@ -7,11 +7,19 @@
 </head>
 <body>
     <header th:fragment="header">
-        <h1>Control de Clientes</h1>
+        <h1>[[#{plantilla.titulo}]]</h1>
     </header>
 
     <footer th:fragment="footer">
-        <p><i class="far fa-copyright"></i> Derechos reservados</p>
+        <div>
+            <br>
+            <a th:href="@{/(lang=es)}">ES</a> |
+            <a th:href="@{/(lang=en)}">EN</a> |
+            <span><i class="far fa-copyright"></i> [[#{plantilla.pie-pagina}]]</span>
+            <form th:action="@{/logout}" method="POST">
+                <a href="#" onclick="this.parentNode.submit();">[[#{accion.logout}]]</a>
+            </form>
+        </div>
     </footer>
 </body>
 </html>

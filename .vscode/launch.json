@@ -29,6 +29,16 @@
             "mainClass": "mx.com.polordz.thymeleaf.ControlClientesApplication",
             "projectName": "HolaMundoSpringData",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ControlClientesApplication<ControlClientesSpringData>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.polordz.thymeleaf.ControlClientesApplication",
+            "projectName": "ControlClientesSpringData",
+            "args": ""
         }
     ]
 }
