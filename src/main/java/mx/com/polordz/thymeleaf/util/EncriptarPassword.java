@@ -7,10 +7,10 @@ import lombok.var;
 public class EncriptarPassword {
     public static void main(String[] args) {
         var password = "Amonos123";
-        System.out.println(encriptarPassword(password));
+        System.out.println(encryptPassword(password));
     }
 
-    public static encriptarPassword(String password){
+    public static encryptPassword(String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.encode(password);
     }
