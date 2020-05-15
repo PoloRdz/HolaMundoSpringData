@@ -8,10 +8,10 @@
 		<relativePath />
 	</parent>
 	<groupId>mx.com.polordz</groupId>
-	<artifactId>HolaMundoSpringData</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<artifactId>ControlClientesSpringData</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>holamundospringdata</name>
-	<description>Hola Mundo Spring Data</description>
+	<description>Control Clientes Spring Data</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

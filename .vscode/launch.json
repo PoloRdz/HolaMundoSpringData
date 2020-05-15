@@ -9,6 +9,26 @@
             "mainClass": "mx.com.polordz.thymeleaf.HolaMundoThymeleaf",
             "projectName": "thymeleaf",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HolaMundoThymeleaf<HolaMundoSpringData>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.polordz.thymeleaf.HolaMundoThymeleaf",
+            "projectName": "HolaMundoSpringData",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ControlClientesApplication<HolaMundoSpringData>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.polordz.thymeleaf.ControlClientesApplication",
+            "projectName": "HolaMundoSpringData",
+            "args": ""
         }
     ]
 }

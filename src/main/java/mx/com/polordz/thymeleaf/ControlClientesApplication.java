@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HolaMundoThymeleaf {
+public class ControlClientesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HolaMundoThymeleaf.class, args);
+        SpringApplication.run(ControlClientesApplication.class, args);
     }
     
 }
