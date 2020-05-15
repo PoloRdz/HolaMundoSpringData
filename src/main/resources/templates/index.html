@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +16,7 @@
 <body>
     <div class="container">
         <header th:replace="layout/plantilla :: header"></header>
-        <a th:href="@{/agregar}"><button class="btn btn-primary"><i class="fas fa-user-plus"></i></button></a>
+        <a th:href="@{/agregar}" sec:authorize="hasRole('ROLE_ADMIN')"><button class="btn btn-primary"><i class="fas fa-user-plus"></i></button></a>
         <br>
         <table class="table" th:if="${personas != null and !personas.empty}">
             <tr>
@@ -23,20 +24,20 @@
                 <th scope="col">[[#{persona.apellido}]]</th>
                 <th scope="col">[[#{persona.email}]]</th>
                 <th scope="col">[[#{persona.telefono}]]</th>
-                <th scope="col">[[#{accion.editar}]]</th>
-                <th scope="col">[[#{accion.eliminar}]]</th>
+                <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.editar}]]</th>
+                <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
             </tr>
             <tr th:each="persona : ${personas}">
                 <td id="nombre" th:text="${persona.nombre}"></td>
                 <td id="apellido" th:text="${persona.apellido}"></td>
                 <td id="email" th:text="${persona.email}"></td>
                 <td id="telefono" th:text="${persona.telefono}"></td>
-                <td id="editar"><a th:href="@{/editar/} + ${persona.id}"><button class="btn btn-success"><i class="fas fa-user-edit"></i></button></a></td>
-                <td id="eliminar"><a th:href="@{/eliminar(id=${persona.id})}"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
+                <td id="editar" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editar/} + ${persona.id}"><button class="btn btn-success"><i class="fas fa-user-edit"></i></button></a></td>
+                <td id="eliminar" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminar(id=${persona.id})}"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
             </tr>
         </table> 
         <div th:if="${personas == null or personas.empty}">
-            La lista de personas esta vacia
+            [[#{persona.lista-vacia}]]
         </div>
     </div>
     <footer th:replace="layout/plantilla :: footer"></footer>

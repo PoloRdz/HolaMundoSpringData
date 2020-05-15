@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,8 @@
             <a th:href="@{/(lang=en)}">EN</a> |
             <span><i class="far fa-copyright"></i> [[#{plantilla.pie-pagina}]]</span>
             <form th:action="@{/logout}" method="POST">
+                <b>User: </b> <span sec:authentication="name"></span> |
+                <b>Roles: </b> <span sec:authentication="principal.authorities"></span> |
                 <a href="#" onclick="this.parentNode.submit();">[[#{accion.logout}]]</a>
             </form>
         </div>
