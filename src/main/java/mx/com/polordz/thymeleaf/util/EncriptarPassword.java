@@ -2,15 +2,14 @@ package mx.com.polordz.thymeleaf.util;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import lombok.var;
 
 public class EncriptarPassword {
     public static void main(String[] args) {
-        var password = "Amonos123";
+        String password = "Amonos123";
         System.out.println(encryptPassword(password));
     }
 
-    public static encryptPassword(String password){
+    public static String encryptPassword(String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.encode(password);
     }
