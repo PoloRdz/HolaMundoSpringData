@@ -19,7 +19,8 @@ import mx.com.polordz.thymeleaf.service.PersonaService;
 @Controller
 @Slf4j
 public class ControladorInicio {
-    
+    //$2a$10$jY.UWysF3vES4eJ6boOlFu1W/b29cnbF7ZkAn5v7TEefYPWZEUHxG
+    //$2a$10$ocOahULz/Xi.wtGhCEGnQeSNnrgRhCRWO/aR6.ZvyZv8cbbYz9.zS
     @Autowired
     private PersonaService personaService;
 
