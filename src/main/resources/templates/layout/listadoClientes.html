@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+</head>
+
+<body>
+    <section th:fragment="listadoClientes">   
+        <table class="table table-striped mt-1" th:if="${personas != null and !personas.empty}">
+            <tr>
+                <th scope="col">[[#{persona.nombre}]]</th>
+                <th scope="col">[[#{persona.apellido}]]</th>
+                <th scope="col">[[#{persona.email}]]</th>
+                <th scope="col">[[#{persona.telefono}]]</th>
+                <th scope="col">[[#{persona.saldo}]]</th>
+                <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.editar}]]</th>
+                <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">[[#{accion.eliminar}]]</th>
+            </tr>
+            <tr th:each="persona : ${personas}">
+                <td id="nombre">[[${persona.nombre}]]</td>
+                <td id="apellido">[[${persona.apellido}]]</td>
+                <td id="email">[[${persona.email}]]</td>
+                <td id="telefono">[[${persona.telefono}]]</td>
+                <td id="saldo">$ [[${persona.saldo}]]</td>
+                <td id="editar" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editar/} + ${persona.id}"><button class="btn btn-success"><i class="fas fa-user-edit"></i></button></a></td>
+                <td id="eliminar" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminar(id=${persona.id})}"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
+            </tr>
+        </table> 
+        <div th:if="${personas == null or personas.empty}">
+            [[#{persona.lista-vacia}]]
+        </div>
+    </section>
+</body>
+
+</html>

@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.var;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,7 @@ public class UsuarioService implements UserDetailsService {
     private UsuarioDAO usuarioDAO;
 
     @Override
+    @Transactional(readOnly=true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario = usuarioDAO.findByUsername(username);
         if(usuario == null){
